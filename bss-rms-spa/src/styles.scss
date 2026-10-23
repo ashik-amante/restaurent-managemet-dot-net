@@ -1,0 +1,566 @@
+// Import Bootstrap
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+// Import NgZorro styles
+@import '../node_modules/ng-zorro-antd/ng-zorro-antd.min.css';
+
+// CRITICAL: Set CSS custom properties for NzZorro theme BEFORE any other styles
+:root {
+  --ant-primary-color: #66bb6a;
+  --ant-primary-color-hover: #5cb660;
+  --ant-primary-color-active: #4caf50;
+  --ant-primary-color-outline: rgba(102, 187, 106, 0.2);
+  --ant-primary-1: #f0f9f1;
+  --ant-primary-2: #d4efd6;
+  --ant-primary-3: #a5d6a7;
+  --ant-primary-4: #81c784;
+  --ant-primary-5: #66bb6a;
+  --ant-primary-6: #66bb6a;
+  --ant-primary-7: #4caf50;
+}
+
+// CRITICAL: Override NzZorro primary button color with maximum specificity
+.ant-btn-primary,
+.ant-btn.ant-btn-primary {
+  font-size: 15px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 44px !important;
+  padding: 12px !important;
+  background: #f1faf5 !important;
+  background-color: #f1faf5 !important;
+  border: #66bb6a 1px solid !important;
+  border-color: #66bb6a !important;
+  border-radius: 8px !important;
+  color: #000 !important;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus,
+.ant-btn.ant-btn-primary:hover,
+.ant-btn.ant-btn-primary:focus {
+  background: #d2e6d2 !important;
+  background-color: #d2e6d2 !important;
+  border-color: #66bb6a !important;
+  color: #000 !important;
+}
+
+.ant-btn-primary:active,
+.ant-btn.ant-btn-primary:active {
+  background: #c8e0c8 !important;
+  background-color: #c8e0c8 !important;
+  border-color: #66bb6a !important;
+  color: #000 !important;
+}
+
+.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover,
+.ant-btn.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+  background: #d2e6d2 !important;
+  background-color: #d2e6d2 !important;
+  border-color: #66bb6a !important;
+  color: #000 !important;
+}
+
+.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):active,
+.ant-btn.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):active {
+  background: #c8e0c8 !important;
+  background-color: #c8e0c8 !important;
+  border-color: #66bb6a !important;
+  color: #000 !important;
+}
+
+// Danger button (Cancel button) styling
+.ant-btn-dangerous.ant-btn-default,
+.ant-btn.ant-btn-dangerous.ant-btn-default {
+  font-size: 15px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 44px !important;
+  padding: 12px !important;
+  background: #fff !important;
+  background-color: #fff !important;
+  border-color: #d9d9d9 !important;
+  border-radius: 8px !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.016) !important;
+}
+
+.ant-btn-dangerous.ant-btn-default:hover,
+.ant-btn-dangerous.ant-btn-default:focus,
+.ant-btn.ant-btn-dangerous.ant-btn-default:hover,
+.ant-btn.ant-btn-dangerous.ant-btn-default:focus {
+  background: #ff4d4f !important;
+  background-color: #ff4d4f !important;
+  border-color: #ff4d4f !important;
+  color: #fff !important;
+}
+
+.ant-btn-dangerous.ant-btn-default:active,
+.ant-btn.ant-btn-dangerous.ant-btn-default:active {
+  background: #d9363e !important;
+  background-color: #d9363e !important;
+  border-color: #d9363e !important;
+  color: #fff !important;
+}
+
+// Font faces
+@font-face {
+  font-family: 'Overpass';
+  src: url('../public/Overpass-Regular.woff2') format('woff2'),
+       url('../public/Overpass-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Tailwind directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import variables
+@import 'styles/variables';
+
+// Global styles
+* {
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+
+  &::selection {
+    color: black;
+    background: #c8e6c9;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Overpass", Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Component styles
+.button-primary {
+  background-color: var(--bg-primary-600);
+  color: var(--text-primary);
+  height: 52px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-primary-700);
+  }
+}
+
+.button-secondary {
+  background-color: var(--bg-secondary-light);
+  color: var(--text-dark-primary);
+  height: 52px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--bg-secondary-light-100);
+  }
+}
+
+.login-button {
+  background-color: var(--bg-primary-600);
+  color: white;
+  height: 52px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: white;
+    background-color: var(--bg-primary-700);
+  }
+
+  &:active,
+  &:focus {
+    color: white;
+  }
+}
+
+.drop-down-button {
+  background-color: white;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  border: none;
+  transition: all 0.5s ease-in-out;
+
+  span {
+    color: var(--text-dark-primary);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transition: color 0.5s ease-in-out;
+  }
+
+  &:hover {
+    background-color: var(--bg-warning-600);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    span {
+      color: white;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  // Edit button specific hover - red background
+  &:has([nzType="edit"]):hover {
+    background-color: #ff4d4f !important;
+
+    span {
+      color: white;
+    }
+  }
+
+  // Delete button specific hover - red background
+  &:has([nzType="delete"]):hover {
+    background-color: #ff4d4f !important;
+
+    span {
+      color: white;
+    }
+  }
+}
+
+.edit-button {
+  background-color: white;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  border: none;
+  transition: all 0.5s ease-in-out;
+
+  span {
+    color: var(--text-dark-primary);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transition: color 0.5s ease-in-out;
+  }
+
+  &:hover {
+    background-color: #ff4d4f;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    span {
+      color: white;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.delete-button {
+  border-radius: 0;
+  height: 48px;
+  background: transparent;
+  color: var(--text-dark-primary);
+  font-weight: 400;
+  font-size: 18px;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    color: white;
+    background: var(--bg-warning-600) !important;
+  }
+
+  &:active {
+    color: whitesmoke;
+    background: var(--bg-warning-600);
+  }
+}
+
+.file-upload {
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+// Data table styles
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: var(--bg-ternary-light);
+  }
+
+  th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-dark-primary);
+    border-bottom: 2px solid var(--bg-secondary-light);
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid var(--bg-secondary-light);
+  }
+
+  tbody tr:hover {
+    background-color: var(--bg-ternary-light);
+  }
+}
+
+// Modal styles
+.modal-header {
+  padding: 24px;
+  background-color: var(--bg-primary-600);
+  color: white;
+
+  h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.modal-content {
+  padding: 24px;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  background-color: var(--bg-ternary-light);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+// Override NzZorro primary button color globally for modals
+.ant-modal-footer {
+  .ant-btn-primary {
+    background-color: #66bb6a !important;
+    border-color: #66bb6a !important;
+    color: white !important;
+
+    &:hover {
+      background-color: #5cb660 !important;
+      border-color: #5cb660 !important;
+      color: white !important;
+    }
+
+    &:active, &:focus {
+      background-color: #4caf50 !important;
+      border-color: #4caf50 !important;
+      color: white !important;
+    }
+
+    &:not(:disabled):not(.ant-btn-disabled) {
+      &:hover {
+        background-color: #5cb660 !important;
+        border-color: #5cb660 !important;
+      }
+      &:active {
+        background-color: #4caf50 !important;
+        border-color: #4caf50 !important;
+      }
+    }
+  }
+}
+
+// Global override for all primary buttons (NzZorro theme override)
+.ant-btn-primary,
+button.ant-btn-primary,
+.ant-btn.ant-btn-primary {
+  background-color: #66bb6a !important;
+  border-color: #66bb6a !important;
+  color: white !important;
+  
+  &:hover,
+  &:focus {
+    background-color: #5cb660 !important;
+    border-color: #5cb660 !important;
+    color: white !important;
+  }
+  
+  &:active {
+    background-color: #4caf50 !important;
+    border-color: #4caf50 !important;
+    color: white !important;
+  }
+
+  &:not(:disabled):not(.ant-btn-disabled) {
+    background-color: #66bb6a !important;
+    border-color: #66bb6a !important;
+
+    &:hover,
+    &:focus {
+      background-color: #5cb660 !important;
+      border-color: #5cb660 !important;
+    }
+    
+    &:active {
+      background-color: #4caf50 !important;
+      border-color: #4caf50 !important;
+    }
+  }
+}
+
+// Specific override for modal buttons
+.ant-modal .ant-modal-footer .ant-btn-primary {
+  background-color: #66bb6a !important;
+  border-color: #66bb6a !important;
+
+  &:hover {
+    background-color: #5cb660 !important;
+    border-color: #5cb660 !important;
+  }
+}
+
+// Global modal border radius styling
+.ant-modal-content {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.ant-modal-header {
+  border-radius: 16px 16px 0 0 !important;
+}
+
+.ant-modal-footer {
+  border-radius: 0 0 16px 16px !important;
+}
+
+// Confirmation modal button styling
+.ant-modal-confirm .ant-modal-confirm-btns {
+  display: flex !important;
+  gap: 12px !important;
+  justify-content: center !important;
+}
+
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn {
+  flex: 1 !important;
+  min-width: 140px !important;
+  height: 48px !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+// Cancel button - light gray background (left side)
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-default,
+.ant-modal-confirm .ant-modal-confirm-btns button:first-child {
+  background-color: #e8e8e8 !important;
+  border: 2px solid #e8e8e8 !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+
+  a {
+    color: #000000 !important;
+  }
+}
+
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-default:hover,
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-default:focus,
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-default:active,
+.ant-modal-confirm .ant-modal-confirm-btns button:first-child:hover,
+.ant-modal-confirm .ant-modal-confirm-btns button:first-child:focus,
+.ant-modal-confirm .ant-modal-confirm-btns button:first-child:active {
+  background-color: var(--bg-primary-600) !important;
+  border: 2px solid var(--bg-primary-600) !important;
+  color: white !important;
+  box-shadow: none !important;
+
+  a {
+    color: white !important;
+  }
+}
+
+// OK/Delete button - red (right side)
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-primary {
+  background-color: #dc2626 !important;
+  border: none !important;
+  color: white !important;
+}
+
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-primary:hover,
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-primary:focus {
+  background-color: #b91c1c !important;
+  border: none !important;
+  color: white !important;
+}
+
+// Additional specificity for danger buttons
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-primary.ant-btn-dangerous {
+  background-color: #dc2626 !important;
+  border: none !important;
+  color: white !important;
+}
+
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-primary.ant-btn-dangerous:hover,
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn-primary.ant-btn-dangerous:focus {
+  background-color: #b91c1c !important;
+  border: none !important;
+  color: white !important;
+}
+
+// Employee assignment dropdown height increase
+.ant-select-dropdown {
+  max-height: 400px !important;
+  min-height: 200px !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-content {
+  display: flex;
+  align-items: center;
+}
+
+// Target the inner scrollable container
+.cdk-virtual-scroll-viewport {
+  max-height: 400px !important;
+  min-height: 200px !important;
+}
+
+.rc-virtual-list-holder {
+  max-height: 400px !important;
+  min-height: 200px !important;
+}
+
+.rc-virtual-list {
+  max-height: 400px !important;
+  min-height: 200px !important;
+}
+
+.rc-virtual-list-holder-inner {
+  min-height: auto !important;
+}
+
+// Image preview modal centering
+.ant-image-preview-wrap {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ant-image-preview-img-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ant-image-preview-img {
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+  object-fit: contain !important;
+}

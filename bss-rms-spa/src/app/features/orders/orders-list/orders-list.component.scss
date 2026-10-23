@@ -1,0 +1,161 @@
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+.order-container {
+  min-height: calc(100vh - 85px);
+  max-height: calc(100vh - 85px);
+}
+
+.order-card {
+  width: 100%;
+  min-height: 420px;
+  border: 1px solid var(--bg-secondary-light-100);
+}
+
+.order-item-container {
+  min-height: inherit;
+}
+
+.food-image-container {
+  min-height: 72px;
+  max-height: 72px;
+  min-width: 72px;
+  max-width: 72px;
+  border-radius: 50%;
+}
+
+.food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-card-body {
+  min-height: 250px;
+  max-height: 250px;
+}
+
+.drop-down-filter {
+  width: 155px;
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid var(--bg-secondary-light-100);
+  background-color: white;
+}
+
+// Orders specific button overrides (inherit global animations from styles.scss)
+.edit-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--bg-secondary-light-100);
+
+  &:hover {
+    background-color: var(--bg-secondary-light-50);
+  }
+}
+
+.drop-down-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--bg-secondary-light-100);
+
+  &:hover {
+    background-color: var(--bg-secondary-light-50);
+  }
+
+  &.status-button {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: orange;
+      border-color: orange;
+      color: white;
+
+      span {
+        color: white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .order-card {
+    width: 100%;
+    min-height: 400px;
+  }
+}
+
+// Override pagination colors to green
+::ng-deep {
+  // Center the pagination
+  .ant-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ant-pagination-item {
+    border-radius: 8px !important;
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    border-radius: 8px !important;
+  }
+
+  .ant-pagination-item-active {
+    background-color: #66bb6a !important;
+    border-color: #66bb6a !important;
+    border-radius: 8px !important;
+
+    a {
+      color: white !important;
+    }
+  }
+
+  .ant-pagination-item:hover {
+    border-color: #66bb6a !important;
+
+    a {
+      color: #66bb6a !important;
+    }
+  }
+
+  .ant-pagination-prev:hover .ant-pagination-item-link,
+  .ant-pagination-next:hover .ant-pagination-item-link {
+    color: #66bb6a !important;
+    border-color: #66bb6a !important;
+  }
+
+  .ant-pagination-item-active:hover {
+    background-color: #4caf50 !important;
+    border-color: #4caf50 !important;
+
+    a {
+      color: black !important;
+    }
+  }
+
+  // Page size selector (10 / page dropdown)
+  .ant-select-selector {
+    border-color: #66bb6a !important;
+    border-radius: 8px !important;
+  }
+
+  .ant-select-focused .ant-select-selector,
+  .ant-select-selector:hover {
+    border-color: #66bb6a !important;
+    border-radius: 8px !important;
+  }
+
+  .ant-select-item-option-selected {
+    background-color: #e8f5e9 !important;
+    color: #2e7d32 !important;
+    font-weight: 600;
+  }
+
+  .ant-select-item-option-active {
+    background-color: #c8e6c9 !important;
+  }
+}
